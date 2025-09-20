@@ -1,0 +1,21 @@
+ # Node modules (if using Hardhat or Truffle locally)
+node_modules/
+
+# Remix local workspace settings
+.remix/
+
+# Compiled contracts
+build/
+artifacts/
+cache/
+coverage/
+
+# Environment variables
+.env
+
+# VS Code settings
+.vscode/
+
+# Mac / Linux system files
+.DS_Store
+*.swp
