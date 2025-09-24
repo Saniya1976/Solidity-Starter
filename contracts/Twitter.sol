@@ -11,6 +11,7 @@ contract Twitter{
     }
     mapping (address=>Tweet[]) public tweets;
     address public owner;
+    event TweetCreated(uint256 id,address author , string content ,uint256 timestamp);
     constructor(){
          owner=msg.sender;
     }
@@ -32,6 +33,7 @@ contract Twitter{
             timestamp:block.timestamp
         });
         tweets[msg.sender].push(newTweet);
+         emit TweetCreated(newTweet.id,newTweet.author ,newTweet.content ,newTweet.timestamp);
     }
     function likeTweet(address author,uint256 id) external{
         require(tweets[author][id].id==id,"TWEET DOESN'T EXISTS");
@@ -47,5 +49,7 @@ contract Twitter{
     }
     function getAllTweet() public view returns(Tweet[] memory){
         return tweets[msg.sender];
+
+       
     }
 }
