@@ -9,7 +9,7 @@ contract eventExample{
     }
     mapping(address=>User) public users;
     function registerUser(string memory _username , uint256 _age) public {
-        user storage newUser= users[msg.sender];
+        User storage newUser= users[msg.sender];
         newUser.username=_username;
         newUser.age=_age;
     }
