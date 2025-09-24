@@ -12,5 +12,6 @@ contract eventExample{
         User storage newUser= users[msg.sender];
         newUser.username=_username;
         newUser.age=_age;
+        emit newUserRegistered(msg.sender ,_username);
     }
 }
